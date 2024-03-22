@@ -1,0 +1,45 @@
+
+.card{
+    width: 250px;
+    height: 330px;
+    margin-left: 5px;
+    border: 2px solid #000;
+    float: left;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f5f3f2;
+}
+.card-img{
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+}
+.cart-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+table{
+   border: 2px solid #000;
+    text-align: left;
+}
+
+td, th {
+    border: 1px solid #000;
+    padding: 8px;
+    min-height: 160px;
+    font-size: 15px;
+}
+.fa{
+    color: #e12929;
+}
+
+.inputValue input {
+    width: 40px; 
+    height: 40px; 
+    font-size: 15px; 
+  }
+
+
+  

@@ -1,0 +1,23 @@
+    <div class="form-row ml-3">
+      <h3 class="heading ml-5 mt-4">Add Product</h3>
+    </div>
+      <mat-dialog-content class="form">
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" formControlName="productName">
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Product Price</label>
+            <input type="text" id="productPrice" formControlName="productPrice">
+          </div>
+          <div class="form-group">
+            <label for="productImg">Product Image</label>
+            <input type="text" id="productImg" formControlName="productImg">
+          </div>
+          <div class="form-group">
+            <button  type="submit" class="btn btn-primary">Add Product</button>
+          </div>
+        </form>
+      <mat-dialog-content>
+  

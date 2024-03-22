@@ -1,0 +1,55 @@
+
+<div class="col-sm-12">
+  <div class="row" *ngIf="allProdArray.length">
+    <div class="card ml-3 mb-4" *ngFor="let product of allProdArray; let i = index ">
+      <img [src]="product.productImg" class="card-img">
+      <div class="card-body">
+        <h5 class="card-title">{{product.productName}}</h5>
+        <p class="card-text">price: {{product.productPrice | currency:'INR'}}</p>
+        
+        <div class="cart-btn">
+
+          <button class="btn btn-primary ml-3" type="button" (click)="decrement(product)">-</button>
+          <div class="inputValue">
+            <input id="form1" min="1" name="quantity" [(ngModel)]="product.productQuantity" value="0" type="text"
+              class="form-control">
+          </div>
+          <button class="btn btn-primary mr-4" type="button" (click)="increment(product)">+</button>
+
+        </div>
+        <button type="button" class="btn btn-success mt-4" data-mdb-toggle="tooltip" (click)="onClick(product)">
+          Add To Bag
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-md-6">
+    <div class="row">
+      <table class="table table-bordered" *ngIf="prodListArray.length">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price Details</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of prodListArray">
+            <td>{{ list.productName}}</td>
+            <td>{{ list.productQuantity }}</td>
+            <td>{{ list.productPrice }}</td>
+            <td>{{ list.productQuantity * list.productPrice}}</td>
+            <td><i class="fa fa-trash text-center" aria-hidden="true" (click)="onDelete(list)"></i></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="order-total text-right">Total Order:</td>
+            <td>{{totalPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
